@@ -70,6 +70,14 @@ person = Person(123, "jiwoong", "Hwang", "M", 35)
 # session.commit()
 
 
+# Get all
 results = session.query(Person).all()
 
-print(results)
+# Get with filter
+filterResults = session.query(Person).filter(Person.age > 20)
+
+for r in results:
+    print(r)
+
+for r in filterResults:
+    print(r)
